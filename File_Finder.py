@@ -11,7 +11,7 @@ def search_path(keyword ,path):
                 found_paths.append(os.path.join(folders, name))
     return found_paths
 keyword = input("Search for: ")
-path = 'C:/Users/user/Desktop/'
+path = '/'
 results = search_path(keyword, path)
 if len(results) > 0:
     print("I founded:\n")
