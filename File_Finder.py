@@ -1,8 +1,8 @@
 import os
 
-def search_path(keyword):
+def search_path(keyword ,path):
     found_paths = []
-    for folders, subfolders, files in os.walk('C:/Users/user/OneDrive/Desktop/'):
+    for folders, subfolders, files in os.walk(path):
         for name in subfolders:
             if keyword in name:
                 found_paths.append(os.path.join(folders, name))
@@ -11,7 +11,8 @@ def search_path(keyword):
                 found_paths.append(os.path.join(folders, name))
     return found_paths
 keyword = input("Search for: ")
-results = search_path(keyword)
+path = 'C:/Users/user/OneDrive/Desktop/'
+results = search_path(keyword, path)
 if len(results) > 0:
     print("I founded:\n")
     for path in results:
